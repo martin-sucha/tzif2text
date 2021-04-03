@@ -155,7 +155,7 @@ func printDataBlock(data []byte, h header, timeFn func([]byte) ([]byte, int64, e
 		if err != nil {
 			return data, err
 		}
-		fmt.Printf(" %d (%s)\n", ts, time.Unix(ts, 0).Format("2006-01-02T15:04:05"))
+		fmt.Printf(" %d (%s UTC)\n", ts, time.Unix(ts, 0).UTC().Format("2006-01-02T15:04:05"))
 	}
 	fmt.Println("Transition types:")
 	for i := uint32(0); i <  h.timecnt; i++ {
